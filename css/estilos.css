@@ -1,0 +1,609 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  width: 100%;
+  min-height: 3rem;
+  background-color: black;
+  text-align: center;
+}
+
+header .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .navbar-nav .nav-link {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header ul li a {
+  color: black;
+  background-color: #b6c62c;
+  text-decoration: none;
+  margin-left: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px 10px 10px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+header ul li a:hover {
+  color: black;
+  background-color: white;
+}
+
+main .fotoHoteles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 300px;
+  background-image: url(../media/fotoHoteles.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: white;
+}
+
+main .fotoHoteles p {
+  margin-left: 15px;
+}
+
+main .boton {
+  display: inline-block;
+  background-position: center;
+  padding: 10px 20px;
+  background-color: #b6c62c;
+  color: white;
+  font-size: 1.5rem;
+  margin: 10px;
+  border: #b6c62c;
+  border-radius: 10px 10px 10px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+}
+
+main .boton:hover {
+  background-color: black;
+  color: white;
+}
+
+main .acomodarCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+main .acomodarCard img {
+  width: 100%;
+  min-height: 300px;
+}
+
+main .acomodarCard .card {
+  border: 1px solid gray;
+  border-radius: 8px 8px 8px 8px;
+}
+
+main .acomodarCard h5 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  background-color: #fded00c7;
+  border-radius: 5px 5px 5px 5px;
+}
+
+main .acomodarCard p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+main .acomodarCard .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .acomodarCard .btn-primary {
+  background-color: #ababa6;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 25px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  width: auto;
+  display: none;
+}
+
+main #bodegas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+main #bodegas .card {
+  border: 1px solid gray;
+  border-radius: 8px 8px 8px 8px;
+  min-height: 350px;
+  margin-bottom: 10px;
+}
+
+main #bodegas h5 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+main #bodegas p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main #bodegas .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #bodegas .btn-primary {
+  background-color: #ababa6;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ababa6;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  width: auto;
+}
+
+main #reserva {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: #9e9e9e33;
+  margin-top: 20px;
+}
+
+main #reserva h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #fded00c7;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main #reservaParticular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: #9e9e9e33;
+  margin-top: 20px;
+}
+
+main #reservaParticular h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #fded00c7;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main #detalleReserva {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  border-bottom: 1px solid gray;
+  background-color: #9e9e9e33;
+}
+
+main #detalleReserva h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #fded00c7;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main #detalleReserva li {
+  margin: 15px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style-position: inside;
+}
+
+main #detalleReservaParticular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  border-bottom: 1px solid gray;
+  background-color: #9e9e9e33;
+}
+
+main #detalleReservaParticular h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #fded00c7;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main #detalleReservaParticular li {
+  margin: 15px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style-position: inside;
+}
+
+main .formulario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-top: 25px;
+}
+
+main .formulario h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #fded00c7;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+}
+
+main .formulario .flexible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 60%;
+}
+
+main .formulario #titulo {
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+main .formulario input {
+  margin: 5px;
+  width: 60%;
+}
+
+main .formulario label {
+  margin: 5px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .fotoGeneral {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  width: 100%;
+  height: 1080px;
+  background-image: url(../media/portada.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: white;
+}
+
+main .fotoGeneral .flexible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .fotoGeneral p {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+main .fotoGeneral .botonReserva1 {
+  margin-top: 18rem;
+  width: 25%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: transparent;
+  border-radius: 10px 10px 10px 10px;
+  background-color: black;
+  color: white;
+}
+
+main .fotoGeneral .botonReserva1:hover {
+  background-color: #fded00;
+  color: black;
+}
+
+main .fotoGeneral .botonReserva2 {
+  margin-top: 18rem;
+  width: 25%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px 10px 10px 10px;
+  border: transparent;
+  background-color: black;
+  color: white;
+}
+
+main .fotoGeneral .botonReserva2:hover {
+  background-color: #fded00;
+  color: black;
+}
+
+main .fotoParticular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 300px;
+  background-image: url(../media/fotoParticular.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: white;
+}
+
+#miFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 14px;
+  color: black;
+  background-color: #9e9e9e33;
+  text-align: center;
+  padding: 30px 5px;
+  border-top: 1.5px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+}
+
+#miFooter ul {
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+#miFooter ul li {
+  padding: 5px 0;
+}
+
+#miFooter .iconos a {
+  padding-right: 5px;
+}
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vistalba Bikes - Alojamientos y Anfitriones</title>	
+	<meta charset=utf-8>
+	<meta name=description content="Ofrecemos los mejores tours auto-guiados y guiados en bicicleta por Luján de Cuyo. Nuestro servicio de alquiler es dedicado y detallado. Queremos no solo que rentes nuestras bicicletas, sino que experimentes Mendoza en su totalidad, junto con su cultura del vino. Aprovecha al máximo tu estadía en esta hermosa región, pedaleando al lado de impresionantes viñedos!">
+    <meta name=keywords content="bicicleta, tour, autoguiado, lujan de cuyo, mendoza, experiencia, turismo, alquiler, argentina">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<header>
+        <nav class="navbar">
+            <div>
+                <a class="navbar-brand logo" href="index.html"><img width="75rem" src="media/logo.png" alt="logo"></a>
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="particular.html">PARTICULARES</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="hotel.html">ALOJAMIENTOS</a>
+            </li>
+        </ul>
+          </nav>
+    </header>
+    <main class="container-fluid">
+        
+        <div class="row">
+        <div class="fotoHoteles col 12">
+            <p>SISTEMA DE RESERVAS PARA<br> ALOJAMIENTOS Y ANFITRIONES</p>  
+            <p></p>
+        </div>
+        <div class="col-12">
+            <div class="formulario">
+                <h4>INGRESA TUS DATOS AQUÍ</h4>
+                <div id="tipoTour">
+                    <label for="hotel">¿La reserva la realizas en nombre de un hotel?</label>
+                    <div class="custom-control custom-radio my-1">
+                        <input type="radio" id="1" name="hotel" class="custom-control-input" value="si">
+                        <label class="custom-control-label" for="1">Si</label>
+                    </div>
+                    <div class="custom-control custom-radio my-1">
+                        <input type="radio" id="2" name="hotel" class="custom-control-input" value="no">
+                        <label class="custom-control-label" for="2">No</label>
+                    </div>
+                </div>
+                <input id="nombreHotel" type="text" placeholder="Ingresa el nombre del HOTEL por el cual haces la reserva" required>
+                <input id="cantCiclistas" type="number" placeholder="Ingrese N° de Ciclistas (No debe superar las 10 personas, caso contrario, hacer dos reservas.)" required>
+                <label for="fechaTour">Ingresa la fecha en la que tomaran el tour: </label>
+                <input id="fechaTour" type="date" placeholder="Ingresa la fecha en la que tomaran el tour" required>
+                <input id="nombreCiclista" type="text" placeholder="Ingresá el nombre completo del ciclista principal">
+                <div class="my-1 flexible">
+                    <select class="custom-select custom-select-sm">
+                          <option  selected>Seleccioná</option>
+                          <option value="DNI">DNI</option>
+                         <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                    <input id="documento" type="text" placeholder="Ingresá tu DNI o Pasaporte">
+                </div>
+                <input id="email" type="e-mail" placeholder="Ingresá el e-mail del ciclista principal">
+                <input id="telefono" type="tel" placeholder="Ingresá el teléfono del ciclista con código de área">
+                <div id="tipoTour">
+                    <div class="custom-control custom-radio my-1">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Autoguiado">
+                        <label class="custom-control-label" for="customRadio1">Tour Autoguiado</label>
+                    </div>
+                    <div class="custom-control custom-radio my-1">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Guiado">
+                        <label class="custom-control-label" for="customRadio2">Tour Guiado</label>
+                    </div>
+                    <div class="custom-control custom-radio my-1">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="E-bike">
+                        <label class="custom-control-label" for="customRadio3">Tour E-bike</label>
+                     </div>    
+                 </div>
+
+                <form class="form-inline">
+                <button id="botonReserva" class="btn btn-outline-success boton" type="button">INGRESAR RESERVA</button>
+                  </form>    
+            </div>
+            <div id="reserva">
+
+            </div>
+           <ul id="detalleReserva">
+
+           </ul>
+        </div>
+        <div class="col-12 acomodarCard">
+        <div class="card col-3" style="width: 19rem;">
+            <img src="media/hotel.jpg" class="hotel" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">HOTEL</h5>
+              <p class="card-text">Todos los hoteles de Mendoza que deseen reservar nuestros tours de Bicicletas y trabajar con nosotros, pueden hacerlo aquí</p>
+              <a href="#" class="btn btn-primary">Regístrate</a>
+            </div>
+          </div>
+          <div class="card col-3" style="width: 19rem;">
+            <img src="media/hostel.jpg" class="hostel" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">HOSTEL</h5>
+              <p class="card-text">Todos los hostels de Mendoza que deseen reservar nuestros tours de Bicicletas y trabajar con nosotros, pueden hacerlo aquí</p>
+              <a href="#" class="btn btn-primary">Regístrate</a>
+            </div>
+          </div>
+          <div class="card col-3" style="width: 19rem;">
+            <img src="media/airbnb.jpg" class="airbnb" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">AIRBNB</h5>
+              <p class="card-text">Todos los Airbnb de Mendoza que deseen reservar nuestros tours de Bicicletas y trabajar con nosotros, pueden hacerlo aquí</p>
+              <a href="#" class="btn btn-primary">Regístrate</a>
+            </div>
+          </div>
+          <div class="card col-3" style="width: 19rem;">
+            <img src="media/posada.jpg" class="posada" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">POSADA</h5>
+              <p class="card-text">Todos las Posadas de Mendoza que deseen reservar nuestros tours de Bicicletas y trabajar con nosotros, pueden hacerlo aquí</p>
+              <a href="#" class="btn btn-primary">Regístrate</a>
+            </div>
+          </div>
+        </div>  
+    </div>
+    <footer id="miFooter">
+            <div class="direccionFooter"><!--Seccion de contacto, datos-->
+                <div>
+                    <img width="15px" src="media/marcador-de-posicion.png" alt="">
+                    <p>Embalse Potrerillos 434, Vistalba, Luján de Cuyo, Mendoza</p>
+                </div>
+                <div>
+                    <img width="15px" src="media/email.png" alt="">
+                    <p>info@vistalbabikes.com</p>
+                </div>
+                <div>
+                    <img width="15px" src="media/telefono.png" alt="">
+                    <p>+54 261 342 3499</p> 
+                </div>
+            </div>
+            <div class="iconos"> <!-- logos de redes con enlaces ID miFooter -->
+                <a href="https://api.whatsapp.com/send?phone=542613423499"><img width="45px" src="media/whatsapp.png" alt=""></a>
+                <a href="https://www.facebook.com/vistalbabikes"><img width="45px" src="media/facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/vistalbabikes/"><img width="45px" src="media/instagram.png" alt=""></a>
+                <a href=""><img width="40px" src="media/email.png" alt=""></a>
+                <a href="https://www.tripadvisor.com.ar/Attraction_Review-g1102365-d16194140-Reviews-Vistalba_Bikes-Lujan_de_Cuyo_Mendoza_Province_of_Mendoza_Cuyo.html"><img width="45px" src="media/tripadvisor.png" alt=""></a>
+            </div>
+        </footer>
+    </main>
+   
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.bundle.min.js"></script>
+	 <script src="js/scripts.js"></script>
+</body>
+
+</html>
