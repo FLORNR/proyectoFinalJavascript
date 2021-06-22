@@ -13,8 +13,9 @@ var tipoTour;
 
 reservaFinal = [];
 
-let boton = document.getElementById("botonReserva");
-boton.addEventListener("click", comenzar);
+
+$("#botonReserva").on("click", comenzar);
+
 function comenzar(){
 
     function comisionPorServicio(comisionServicio, cantCiclistas){
@@ -24,13 +25,13 @@ function comenzar(){
 
     //TOMAR LOS DATOS QUE INGRESA EL USUARIO A TRAVES DE LOS INPUTS
     var hotel = (document.querySelector('input[name = "hotel"]:checked').value).toLowerCase();
-    var nombreHotel = (document.getElementById("nombreHotel").value).toUpperCase();
-    var cantCiclistas = parseInt(document.getElementById("cantCiclistas").value);
-    var fechaTour = document.getElementById("fechaTour").value;
-    var nombreCiclista = (document.getElementById("nombreCiclista").value).toUpperCase();
-    var documento = parseInt(document.getElementById("documento").value);
-    var email = document.getElementById("email").value;
-    var telefono = parseInt(document.getElementById("telefono").value);
+    var nombreHotel = $("#nombreHotel").val().toUpperCase();
+    var cantCiclistas = parseInt($("#cantCiclistas").val());
+    var fechaTour = $("#fechaTour").val();
+    var nombreCiclista = $("#nombreCiclista").val().toUpperCase();
+    var documento = $("#documento").val();
+    var email = $("#email").val();
+    var telefono = $("#telefono").val();
     var tipoTour = (document.querySelector('input[name = "customRadio"]:checked').value).toUpperCase();
 
     //INCORPORAR LOS DATOS QUE INGRESO EL USUARIO A UN ARRAY DE RESERVA FINAL
@@ -51,13 +52,17 @@ function comenzar(){
          
         // EN CASO QUE VENGA DE UN HOTEL, VERIFICAMOS QUE NO SEAN MAS DE 10 CICLISTAS, SI SON MAS, BRINDA MENSAJE DE ERROR.
         if (reservaFinal[2] >= 10){
-            let detalle = document.createElement("h3");
-            detalle.innerText = "DETALLE DE LA RESERVA";
-            let lista = document.getElementById("detalleReserva");
-            lista.appendChild(detalle);
-            let elemento = document.createElement("li");
-            elemento.innerText = "El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva";
-            lista.appendChild(elemento);
+
+            $("#detalleReserva").prepend("<h3>DETALLE DE LA RESERVA</h3>");
+            $("#detalleReserva").append("<li>El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva</li>");
+
+            // let detalle = document.createElement("h3");
+            // detalle.innerText = "";
+            // let lista = document.getElementById("detalleReserva");
+            // lista.appendChild(detalle);
+            // let elemento = document.createElement("li");
+            // elemento.innerText = "El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva";
+            // lista.appendChild(elemento);
                      
            
         
@@ -66,46 +71,66 @@ function comenzar(){
          }else {
 
             // DETALLE DE LA TABLA CON ALGUNOS DATOS
+            $("#reserva").append("<h3>DATOS DE LA RESERVA</h3>");
+            // let titulo = document.createElement("h3");
+            // titulo.innerText = "DATOS DE LA RESERVA";
+            $("#reserva").append(`<table class="table table-dark">
+            
+            <tbody class ="agregar">
+              <tr>
+                <td>NOMBRE HOTEL</td>
+                <td>${reservaFinal[1]}</td>
+              </tr>
+              <tr>
+                <td>CANTIDAD DE CICLISTAS</td>
+                <td>${reservaFinal[2]}</td>
+              </tr>
+              <tr>
+                <td>DIA DEL TOUR</td>
+                <td>${reservaFinal[3]}</td>
+              </tr>
+            </tbody>
+          </table>`);
+        
 
-            let titulo = document.createElement("h3");
-            titulo.innerText = "DATOS DE LA RESERVA";
-            let miReserva = document.createElement("table");
-            miReserva.setAttribute("class", "table table-dark");
-            let miFila = document.createElement("tr");
-            let miCelda = document.createElement("td");
-            miCelda.innerText = "NOMBRE HOTEL";
-            miFila.appendChild(miCelda);
-            let miCelda2 = document.createElement("td");
-            miCelda2.innerText = reservaFinal[1];
-            miFila.appendChild(miCelda2);
-            let miFila2 = document.createElement("tr");
-            let miCelda2_1 = document.createElement("td");
-            miCelda2_1.innerText = "CANTIDAD DE CICLISTAS";
-            miFila2.appendChild(miCelda2_1);
-            let miCelda2_2 = document.createElement("td");
-            miCelda2_2.innerText = reservaFinal[2];
-            miFila2.appendChild(miCelda2_2);
-            let miFila3= document.createElement("tr");
-            let miCelda3_1 = document.createElement("td");
-            miCelda3_1.innerText = "DÍA DEL TOUR";
-            miFila3.appendChild(miCelda3_1);
-            let miCelda3_2 = document.createElement("td");
-            miCelda3_2.innerText = reservaFinal[3];
-            miFila3.appendChild(miCelda3_2);
+            // let miReserva = document.createElement("table");
+            // miReserva.setAttribute("class", "table table-dark");
+            // let miFila = document.createElement("tr");
+            // let miCelda = document.createElement("td");
+            // miCelda.innerText = "NOMBRE HOTEL";
+            // miFila.appendChild(miCelda);
+            // let miCelda2 = document.createElement("td");
+            // miCelda2.innerText = reservaFinal[1];
+            // miFila.appendChild(miCelda2);
+            // let miFila2 = document.createElement("tr");
+            // let miCelda2_1 = document.createElement("td");
+            // miCelda2_1.innerText = "CANTIDAD DE CICLISTAS";
+            // miFila2.appendChild(miCelda2_1);
+            // let miCelda2_2 = document.createElement("td");
+            // miCelda2_2.innerText = reservaFinal[2];
+            // miFila2.appendChild(miCelda2_2);
+            // let miFila3= document.createElement("tr");
+            // let miCelda3_1 = document.createElement("td");
+            // miCelda3_1.innerText = "DÍA DEL TOUR";
+            // miFila3.appendChild(miCelda3_1);
+            // let miCelda3_2 = document.createElement("td");
+            // miCelda3_2.innerText = reservaFinal[3];
+            // miFila3.appendChild(miCelda3_2);
                 
                 
-            miReserva.appendChild(miFila);
-            miReserva.appendChild(miFila2);
-            miReserva.appendChild(miFila3);
-            document.getElementById("reserva").appendChild(titulo);
-            document.getElementById("reserva").appendChild(miReserva);
+            // miReserva.appendChild(miFila);
+            // miReserva.appendChild(miFila2);
+            // miReserva.appendChild(miFila3);
+            // document.getElementById("reserva").appendChild(titulo);
+            // document.getElementById("reserva").appendChild(miReserva);
 
             // DETALLE DE LA RESERVA 
 
-            let detalle = document.createElement("h3");
-            detalle.innerText = "DETALLE DE LA RESERVA";
-            let lista = document.getElementById("detalleReserva");
-            lista.appendChild(detalle);
+            $("#detalleReserva").prepend("<h3>DETALLE DE LA RESERVA</h3>");
+            // let detalle = document.createElement("h3");
+            // detalle.innerText = "DETALLE DE LA RESERVA";
+            // let lista = document.getElementById("detalleReserva");
+            // lista.appendChild(detalle);
             
             // TIPO DE SERVICIO
             class Servicio {
@@ -124,67 +149,87 @@ function comenzar(){
                      if (reservaFinal[8] == "AUTOGUIADO") {
                                 let comisionPorPersona = parseFloat(servicioAutoguiado.precio * 0.10);
                                 let comisionPorServicioTotal = comisionPorServicio(comisionPorPersona, cantCiclistas);
-                                let elemento = document.createElement("li");
-                                elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioAutoguiado.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
-                                lista.appendChild(elemento); 
-                                let elemento2 = document.createElement("li");
-                                elemento2.innerText = servicioAutoguiado.descripcion + ". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión por esta reserva es: $" + comisionPorServicioTotal+ ".";
-                                lista.appendChild(elemento2);
-                                let miFila4 = document.createElement("tr");
-                                let miCelda4_1 = document.createElement("td");
-                                miCelda4_1.innerText = "MONTO COMISIÓN";
-                                miFila4.appendChild(miCelda4_1);
-                                let miCelda4_2 = document.createElement("td");
-                                miCelda4_2.innerText = "$"+comisionPorServicioTotal;
-                                miFila4.appendChild(miCelda4_2);
-                                miReserva.appendChild(miFila4)
+                                $("#detalleReserva").append(`<li>Tu reserva está a nombre de:  ${reservaFinal[4]} y la fecha del Tour es: ${reservaFinal[3]}. Recuerda que el tour que elegiste para tus huespedes es: ${reservaFinal[8]} y el costo del mismo es: $${servicioAutoguiado.precio} por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!</li>`);
+                                // let elemento = document.createElement("li");
+                                // elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioAutoguiado.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
+                                // lista.appendChild(elemento); 
+                                $("#detalleReserva").append(`<li>${servicioAutoguiado.descripcion}. Es para un total de: ${reservaFinal[2]} ciclista/s, y tu comisión por esta reserva es: $${comisionPorServicioTotal}.</li>`);
+                                // let elemento2 = document.createElement("li");
+                                // elemento2.innerText = servicioAutoguiado.descripcion + ". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión por esta reserva es: $" + comisionPorServicioTotal+ ".";
+                                // lista.appendChild(elemento2);
+                                $(".agregar").append(`<tr>
+                                <td>MONTO COMISIÓN</td>
+                                <td>$ ${comisionPorServicioTotal}</td>
+                              </tr>`);
+                                // let miFila4 = document.createElement("tr");
+                                // let miCelda4_1 = document.createElement("td");
+                                // miCelda4_1.innerText = "MONTO COMISIÓN";
+                                // miFila4.appendChild(miCelda4_1);
+                                // let miCelda4_2 = document.createElement("td");
+                                // miCelda4_2.innerText = "$"+comisionPorServicioTotal;
+                                // miFila4.appendChild(miCelda4_2);
+                                // miReserva.appendChild(miFila4)
                         
                                   
                             }else if (reservaFinal[8] == "GUIADO"){
                                 let comisionPorPersona = parseFloat(servicioGuiado.precio * 0.10);
                                 let comisionPorServicioTotal =comisionPorServicio(comisionPorPersona, cantCiclistas);
-                                let elemento = document.createElement("li");
-                                elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioGuiado.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
-                                lista.appendChild(elemento); 
-                                let elemento2 = document.createElement("li");
-                                elemento2.innerText =  servicioGuiado.descripcion +". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión es: $" + comisionPorServicioTotal +".";
-                                lista.appendChild(elemento2);
-                                let miFila4 = document.createElement("tr");
-                                let miCelda4_1 = document.createElement("td");
-                                miCelda4_1.innerText = "MONTO COMISIÓN";
-                                miFila4.appendChild(miCelda4_1);
-                                let miCelda4_2 = document.createElement("td");
-                                miCelda4_2.innerText = "$"+comisionPorServicioTotal;
-                                miFila4.appendChild(miCelda4_2);
-                                miReserva.appendChild(miFila4);
+                                $("#detalleReserva").append(`<li>Tu reserva está a nombre de: ${reservaFinal[4]} y la fecha del Tour es: ${reservaFinal[3]}. Recuerda que el tour que elegiste para tus huespedes es: ${reservaFinal[8]} y el costo del mismo es: $${servicioGuiado.precio} por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!</li>`);
+                                // let elemento = document.createElement("li");
+                                // elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioGuiado.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
+                                // lista.appendChild(elemento); 
+                                $("#detalleReserva").append(`<li>${servicioGuiado.descripcion}. Es para un total de: ${reservaFinal[2]} ciclista/s, y tu comisión por esta reserva es: $${comisionPorServicioTotal}.</li>`);
+                                // let elemento2 = document.createElement("li");
+                                // elemento2.innerText =  servicioGuiado.descripcion +". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión es: $" + comisionPorServicioTotal +".";
+                                // lista.appendChild(elemento2);
+                                $(".agregar").append(`<tr>
+                                <td>MONTO COMISIÓN</td>
+                                <td>$ ${comisionPorServicioTotal}</td>
+                              </tr>`);
+                                // let miFila4 = document.createElement("tr");
+                                // let miCelda4_1 = document.createElement("td");
+                                // miCelda4_1.innerText = "MONTO COMISIÓN";
+                                // miFila4.appendChild(miCelda4_1);
+                                // let miCelda4_2 = document.createElement("td");
+                                // miCelda4_2.innerText = "$"+comisionPorServicioTotal;
+                                // miFila4.appendChild(miCelda4_2);
+                                // miReserva.appendChild(miFila4);
                         
                                 
                             }else if (reservaFinal[8] == "E-BIKE"){
                                 let comisionPorPersona = parseFloat(servicioEBike.precio * 0.10);
                                 let comisionPorServicioTotal = parseFloat(comisionPorServicio(comisionPorPersona, cantCiclistas));
-                                let elemento = document.createElement("li");
-                                elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioEBike.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
-                                lista.appendChild(elemento); 
-                                let elemento2 = document.createElement("li");
-                                elemento2.innerText = servicioEBike.descripcion + ". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión es: $" + comisionPorServicioTotal +".";
-                                lista.appendChild(elemento2);
-                                let miFila4 = document.createElement("tr");
-                                let miCelda4_1 = document.createElement("td");
-                                miCelda4_1.innerText = "MONTO COMISIÓN";
-                                miFila4.appendChild(miCelda4_1);
-                                let miCelda4_2 = document.createElement("td");
-                                miCelda4_2.innerText = "$"+comisionPorServicioTotal;
-                                miFila4.appendChild(miCelda4_2);
-                                miReserva.appendChild(miFila4);
+                                $("#detalleReserva").append(`<li>Tu reserva está a nombre de: ${reservaFinal[4]} y la fecha del Tour es: ${reservaFinal[3]}. Recuerda que el tour que elegiste para tus huespedes es: ${reservaFinal[8]} y el costo del mismo es: $${servicioEBike.precio} por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!</li>`);
+                                // let elemento = document.createElement("li");
+                                // elemento.innerText = "Tu reserva está a nombre de: " + reservaFinal[4] + " y la fecha del Tour es: " + reservaFinal[3] +". Recuerda que el tour que elegiste para tus huespedes es: " + reservaFinal[8]+ " y el costo del mismo es: $"+ servicioEBike.precio + " por persona. Esperamos a tu reserva y deseamos seguir trabajando con vos!";
+                                // lista.appendChild(elemento); 
+                                $("#detalleReserva").append(`<li>${servicioEBike.descripcion}. Es para un total de: ${reservaFinal[2]} ciclista/s, y tu comisión por esta reserva es: $${comisionPorServicioTotal}.</li>`);
+                                // let elemento2 = document.createElement("li");
+                                // elemento2.innerText = servicioEBike.descripcion + ". Es para un total de: " + reservaFinal[2] + " ciclista/s, y tu comisión es: $" + comisionPorServicioTotal +".";
+                                // lista.appendChild(elemento2);
+                                $(".agregar").append(`<tr>
+                                <td>MONTO COMISIÓN</td>
+                                <td>$ ${comisionPorServicioTotal}</td>
+                              </tr>`);
+                                // let miFila4 = document.createElement("tr");
+                                // let miCelda4_1 = document.createElement("td");
+                                // miCelda4_1.innerText = "MONTO COMISIÓN";
+                                // miFila4.appendChild(miCelda4_1);
+                                // let miCelda4_2 = document.createElement("td");
+                                // miCelda4_2.innerText = "$"+comisionPorServicioTotal;
+                                // miFila4.appendChild(miCelda4_2);
+                                // miReserva.appendChild(miFila4);
                         
                             } else {
-                                let detalle = document.createElement("h3");
-                                detalle.innerText = "DETALLE DE LA RESERVA";
-                                let lista = document.getElementById("detalleReserva");
-                                lista.appendChild(detalle);
-                                let elemento = document.createElement("li");
-                                elemento.innerText = "El servicio ingresado no es correcto";
-                                lista.appendChild(elemento);
+                                $("#detalleReserva").append("<h3>DETALLE DE LA RESERVA</h3>");    
+                                // let detalle = document.createElement("h3");
+                                // detalle.innerText = "DETALLE DE LA RESERVA";
+                                // let lista = document.getElementById("detalleReserva");
+                                // lista.appendChild(detalle);
+                                $("#detalleReserva").append("<li>El servicio ingresado no es correcto</li>");
+                                // let elemento = document.createElement("li");
+                                // elemento.innerText = "El servicio ingresado no es correcto";
+                                // lista.appendChild(elemento);
                             }
                         
 
@@ -192,19 +237,20 @@ function comenzar(){
     }
     //EN CASO QUE NO SE INGRESE LA RESERVA DESDE UN HOTEL ME TIRA ERROR
     else {
-        let detalle = document.createElement("h3");
-        detalle.innerText = "DETALLE DE LA RESERVA";
-        let lista = document.getElementById("detalleReserva");
-        lista.appendChild(detalle);
-        let elemento = document.createElement("li");
-        elemento.innerText = "Ésta opción es solo para reservas realizadas por Hoteles o Alojamientos.";
-        lista.appendChild(elemento);
+        $("#detalleReserva").append("<h3>DETALLE DE LA RESERVA</h3>");
+        // let detalle = document.createElement("h3");
+        // detalle.innerText = "DETALLE DE LA RESERVA";
+        // let lista = document.getElementById("detalleReserva");
+        // lista.appendChild(detalle);
+        $("#detalleReserva").append("<li>Ésta opción es solo para reservas realizadas por Hoteles o Alojamientos.</li>");
+
+        // let elemento = document.createElement("li");
+        // elemento.innerText = "Ésta opción es solo para reservas realizadas por Hoteles o Alojamientos.";
+        // lista.appendChild(elemento);
         
     }
 
 }
-
-
 
 
 
