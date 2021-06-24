@@ -1,6 +1,6 @@
 //ZONA PARA RESERVA DE MANERA PARTICULAR----------------------------------------------------------------------------------------------------------------------------------
 
-//VARIABLES QUE SE INGRESAN POR INPUT
+//VARIABLES QUE SE INGRESAN POR INPUT----------------------------------------------------------
 var hotelParticular;
 var nombreHotelParticular;
 var cantCiclistasParticular;
@@ -12,8 +12,27 @@ var emailParticular;
 var telefonoParticular;
 var tipoTourParticular;
 
+//ANIMACIONES--------------------------------------------------------------------------
 
-// ARRAY DE OBJETOS PARA PODER CREAR LAS DEGUSTACIONES DE LAS DISTINTAS BODEGAS
+
+$("#infoExtraParticular").hide();
+
+$("#mostrarInfoParticular").click(() => {
+    $("#infoExtraParticular").fadeToggle(2000, function (){
+        if ($("#mostrarInfoParticular").html() == "LEER MENOS") {
+            $("#mostrarInfoParticular").html("LEER MÁS");
+        } else {
+            $("#mostrarInfoParticular").html("LEER MENOS");
+        }
+    });
+});
+
+$("#h4particular").slideUp(2000)
+        .delay(500)
+        .slideDown(2000);
+
+
+// ARRAY DE OBJETOS PARA PODER CREAR LAS DEGUSTACIONES DE LAS DISTINTAS BODEGAS---------------------------------------------
 let bodegas = [
     { id: 1, 
       nombre: "DEGUSTACIÓN CLÁSICA VISTALBA", 
@@ -95,10 +114,10 @@ let bodegas = [
       descripcion: "El servicio incluye degustación de 3 vinos premium.", 
       precio: 1400},
 ];
-// ARRAY DE OBJETOS SELECCIONADOS
+// ARRAY DE OBJETOS SELECCIONADOS--------------------------------------------------------------------------------------------------------------------------------
 bodegasSeleccionadas=[];
 
-// CREACIONES DE TITULO Y LAS CARD CON FOR EACH
+// CREACIONES DE TITULO Y LAS CARD CON FOR EACH--------------------------------------------------------------------------------------------------------------------------------
 const listaBodegas = document.getElementById("bodegas");
 
 let titulo = document.getElementById("titulo");
@@ -138,7 +157,7 @@ function mostrarDatos (){
 
 
 reservaFinalParticular = [];
-// COMIENZO DE LA FUNCION PARA TOMAR LOS DATOS Y GENERAR DETALLES 
+// COMIENZO DE LA FUNCION PARA TOMAR LOS DATOS Y GENERAR DETALLES-------------------------------------------------------------------------------------------------------------------------------- 
 
 
 let botonParticular = document.getElementById("botonReservaParticular");
@@ -146,7 +165,7 @@ botonParticular.addEventListener("click", comenzarParticular);
 function comenzarParticular(){
 
 
-    //TOMAR LOS DATOS QUE INGRESA EL USUARIO A TRAVES DE LOS INPUTS
+    //TOMAR LOS DATOS QUE INGRESA EL USUARIO A TRAVES DE LOS INPUTS--------------------------------------------------------------------------------------------------------------------------------
     var hotelParticular = (document.querySelector('input[name = "hotelParticular"]:checked').value).toLowerCase();
     var nombreHotelParticular = $("#nombreHotelParticular").val().toUpperCase();
     var cantCiclistasParticular = parseInt($("#cantCiclistasParticular").val());
@@ -158,7 +177,7 @@ function comenzarParticular(){
     var telefonoParticular = $("#telefonoParticular").val();
     var tipoTourParticular = (document.querySelector('input[name = "customRadioParticular"]:checked').value).toUpperCase();
 
-    //INCORPORAR LOS DATOS QUE INGRESO EL USUARIO A UN ARRAY DE RESERVA FINAL
+    //INCORPORAR LOS DATOS QUE INGRESO EL USUARIO A UN ARRAY DE RESERVA FINAL--------------------------------------------------------------------------------------------------------------------------------
     reservaFinalParticular.push(hotelParticular);
     reservaFinalParticular.push(nombreHotelParticular);
     reservaFinalParticular.push(cantCiclistasParticular);
@@ -171,26 +190,18 @@ function comenzarParticular(){
     reservaFinalParticular.push(tipoTourParticular);
     console.log(reservaFinalParticular)
 
-    //DETERMINAMOS SI LA RESERVA PROVIENE DE UN HOTEL O NO
+    //DETERMINAMOS SI LA RESERVA PROVIENE DE UN HOTEL O NO--------------------------------------------------------------------------------------------------------------------------------
 
     if (reservaFinalParticular[0] == "no") {
          
-        // EN CASO QUE VENGA DE UN HOTEL, VERIFICAMOS QUE NO SEAN MAS DE 10 CICLISTAS, SI SON MAS, BRINDA MENSAJE DE ERROR.
+        // EN CASO QUE VENGA DE UN HOTEL, VERIFICAMOS QUE NO SEAN MAS DE 10 CICLISTAS, SI SON MAS, BRINDA MENSAJE DE ERROR.--------------------------------------------------------------------------------------------------------------------------------
         if (reservaFinalParticular[2] >= 10){
 
             $("#detalleReservaParticular").prepend("<h3>DETALLE DE LA RESERVA</h3>");
             $("#detalleReservaParticular").append("<li>El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva.</li>");
-            // let detalleParticular = document.createElement("h3");
-            // detalleParticular.innerText = "";
-            // let listaParticular = document.getElementById("detalleReservaParticular");
-            // listaParticular.appendChild(detalleParticular);
-            // let elementoParticular = document.createElement("li");
-            // elementoParticular.innerText = "El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva";
-            // listaParticular.appendChild(elementoParticular);
-                     
            
         
-        //CASO CONTRARIO CREAMOS EL DETALLE DE LA RESERVA, CON LOS MISMOS DATOS QUE CREO EL USUARIO
+        //CASO CONTRARIO CREAMOS EL DETALLE DE LA RESERVA, CON LOS MISMOS DATOS QUE CREO EL USUARIO--------------------------------------------------------------------------------------------------------------------------------
            
          }else {
 
@@ -215,49 +226,13 @@ function comenzarParticular(){
             </tbody>
           </table>`);
 
-            // let tituloParticular = document.createElement("h3");
-            // tituloParticular.innerText = "DATOS DE LA RESERVA";
-            // let miReservaParticular = document.createElement("table");
-            // miReservaParticular.setAttribute("class", "table table-dark");
-            // let miFilaParticular = document.createElement("tr");
-            // let miCeldaParticular = document.createElement("td");
-            // miCeldaParticular.innerText = "NOMBRE DE LA RESERVA";
-            // miFilaParticular.appendChild(miCeldaParticular);
-            // let miCeldaParticular2 = document.createElement("td");
-            // miCeldaParticular2.innerText = reservaFinalParticular[4];
-            // miFilaParticular.appendChild(miCeldaParticular2);
-            // let miFilaParticular2 = document.createElement("tr");
-            // let miCeldaParticular2_1 = document.createElement("td");
-            // miCeldaParticular2_1.innerText = "CANTIDAD DE CICLISTAS";
-            // miFilaParticular2.appendChild(miCeldaParticular2_1);
-            // let miCeldaParticular2_2 = document.createElement("td");
-            // miCeldaParticular2_2.innerText = reservaFinalParticular[2];
-            // miFilaParticular2.appendChild(miCeldaParticular2_2);
-            // let miFilaParticular3= document.createElement("tr");
-            // let miCeldaParticular3_1 = document.createElement("td");
-            // miCeldaParticular3_1.innerText = "DÍA DEL TOUR";
-            // miFilaParticular3.appendChild(miCeldaParticular3_1);
-            // let miCeldaParticular3_2 = document.createElement("td");
-            // miCeldaParticular3_2.innerText = reservaFinalParticular[3];
-            // miFilaParticular3.appendChild(miCeldaParticular3_2);
-                
-                
-            // miReservaParticular.appendChild(miFilaParticular);
-            // miReservaParticular.appendChild(miFilaParticular2);
-            // miReservaParticular.appendChild(miFilaParticular3);
-            // document.getElementById("reservaParticular").appendChild(tituloParticular);
-            // document.getElementById("reservaParticular").appendChild(miReservaParticular);
 
-            // DETALLE DE LA RESERVA 
+            // DETALLE DE LA RESERVA --------------------------------------------------------------------------------------------------------------------------------
 
             $("#detalleReservaParticular").prepend("<h3>DETALLE DE LA RESERVA</h3>");
 
-            // let detalleParticular = document.createElement("h3");
-            // detalleParticular.innerText = "DETALLE DE LA RESERVA";
-            // let listaParticular = document.getElementById("detalleReservaParticular");
-            // listaParticular.appendChild(detalleParticular);
             
-            // DATOS ALMACENADOS EN LOCAL STORAGE LOS OBTENGO PARA DETALLAR Y CREO UN NUEVO ARRAY
+            // DATOS ALMACENADOS EN LOCAL STORAGE LOS OBTENGO PARA DETALLAR Y CREO UN NUEVO ARRAY--------------------------------------------------------------------------------------------------------------------------------
 
             class degusSeleccionadas {
                 constructor(obj) {
@@ -267,7 +242,7 @@ function comenzarParticular(){
                     this.precio = obj.precio
                 }
             }
-
+            var contadorTotal= 0;
             const datosGuardados = JSON.parse(sessionStorage.getItem("listaBodegasSeleccionadas"));
             const seleccionDegustaciones =[];
 
@@ -276,18 +251,14 @@ function comenzarParticular(){
             }
             console.log(seleccionDegustaciones);
 
-            //CREA UN DETALLE DE LAS BODEGAS SELECCIONADAS Y DEMAS DATOS DE CONTACTO
+            //CREA UN DETALLE DE LAS BODEGAS SELECCIONADAS Y DEMAS DATOS DE CONTACTO--------------------------------------------------------------------------------------------------------------------------------
             
             for (const obj of datosGuardados){
             $("#detalleReservaParticular").append(`<li>Seleccionaste para visitar la siguiente Degustación y Bodega ${obj.nombre}, el costo de la misma es $${obj.precio} y te incluye lo siguiente: ${obj.descripcion}</li>`);
+            contadorTotal = contadorTotal + obj.precio;
             
-        
-            // let agregarSeleccion = document.getElementById("detalleReservaParticular")
-            // let detalleBodegas = document.createElement("li");
-            // detalleBodegas.innerText = `Seleccionaste para visitar la siguiente Degustación y Bodega ${obj.nombre}, el costo de la misma es ${obj.precio} y te incluye lo siguiente: ${obj.descripcion}`
-            // agregarSeleccion.appendChild(detalleBodegas);
-        }
-        
+             }
+            console.log(contadorTotal)
 
             // TIPO DE SERVICIO
             class ServicioParticular {
@@ -305,72 +276,55 @@ function comenzarParticular(){
                     // SEGUN EL SERVICIO ELEGIDO ME TIRA DETALLE DE CADA UNO    
                      if (reservaFinalParticular[9] == "AUTOGUIADO") {
                 
-                                $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioAutoguiado.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);
-                                // let elementoParticular = document.createElement("li");
-                                // elementoParticular.innerText = "Tu reserva está a nombre de: " + reservaFinalParticular[4] + " y la fecha del Tour es: " + reservaFinalParticular[3] +". Recuerda que el tour que elegiste es: " + reservaFinalParticular[9]+ " y el costo del mismo es: $"+ servicioAutoguiado.precio + " por persona. Los esperamos para que disfruten de una hermosa experiencia!";
-                                // listaParticular.appendChild(elementoParticular); 
-                                $("#detalleReservaParticular").append(`<li>${servicioAutoguiado.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
-                                // let elementoParticular2 = document.createElement("li");
-                                // elementoParticular2.innerText = servicioAutoguiado.descripcion + ". Es para un total de: " + reservaFinalParticular[2] + " ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: "+ reservaFinalParticular[7]+".";
-                                // listaParticular.appendChild(elementoParticular2);
+                            $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioAutoguiado.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);
+                                
+                            $("#detalleReservaParticular").append(`<li>${servicioAutoguiado.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
+                               
+                            contadorTotal = contadorTotal + servicioAutoguiado.precio;
+
+                            $("#detalleReservaParticular").append(`<li>El costo total a pagar que incluye el servicio y las degustaciones elegidas es: $${contadorTotal}</li>`)
                     
                                   
-                            }else if (reservaFinalParticular[9] == "GUIADO"){
+                    }else if (reservaFinalParticular[9] == "GUIADO"){
                                
-                                $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioGuiado.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);    
-                                // let elementoParticular = document.createElement("li");
-                                // elementoParticular.innerText = "Tu reserva está a nombre de: " + reservaFinalParticular[4] + " y la fecha del Tour es: " + reservaFinalParticular[3] +". Recuerda que el tour que elegiste es: " + reservaFinalParticular[9]+ " y el costo del mismo es: $"+ servicioGuiado.precio + " por persona. Los esperamos para que disfruten de una hermosa experiencia!";
-                                // listaParticular.appendChild(elementoParticular); 
-                                $("#detalleReservaParticular").append(`<li>${servicioGuiado.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
-                                // let elementoParticular2 = document.createElement("li");
-                                // elementoParticular2.innerText =  servicioGuiado.descripcion + ". Es para un total de: " + reservaFinalParticular[2] + " ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: "+ reservaFinalParticular[7]+".";
-                                // listaParticular.appendChild(elementoParticular2);
+                            $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioGuiado.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);    
                                 
-                        
+                            $("#detalleReservaParticular").append(`<li>${servicioGuiado.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
                                 
-                            }else if (reservaFinalParticular[9] == "E-BIKE"){
-                               
-                                $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioEBike.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);
-                                // let elementoParticular = document.createElement("li");
-                                // elementoParticular.innerText = "Tu reserva está a nombre de: " + reservaFinalParticular[4] + " y la fecha del Tour es: " + reservaFinalParticular[3] +". Recuerda que el tour que elegiste es: " + reservaFinalParticular[9]+ " y el costo del mismo es: $"+ servicioEBike.precio + " por persona. Los esperamos para que disfruten de una hermosa experiencia!";
-                                // listaParticular.appendChild(elementoParticular); 
-                                $("#detalleReservaParticular").append(`<li>${servicioEBike.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
-                                // let elementoParticular2 = document.createElement("li");
-                                // let elementoParticular2 = document.createElement("li");
-                                // elementoParticular2.innerText = servicioEBike.descripcion + ". Es para un total de: " + reservaFinalParticular[2] + " ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: "+ reservaFinalParticular[7]+".";
-                                // listaParticular.appendChild(elementoParticular2);
-                              
+                                contadorTotal = contadorTotal + servicioGuiado.precio;
 
-                            } else {
-
-                                $("#detalleReservaParticular").prepend("<h3>DETALLE DE LA RESERVA</h3>");
-                                // let detalleParticular = document.createElement("h3");
-                                // detalleParticular.innerText = "DETALLE DE LA RESERVA";
-                                // let listaParticular = document.getElementById("detalleReservaParticular");
-                                // listaParticular.appendChild(detalleParticular);
-
-                                $("#detalleReservaParticular").prepend("<li>El servicio ingresado no es correcto</li>");
-                                // let elementoParticular = document.createElement("li");
-                                // elementoParticular.innerText = "El servicio ingresado no es correcto";
-                                // listaParticular.appendChild(elementoParticular);
+                            $("#detalleReservaParticular").append(`<li>El costo total a pagar que incluye el servicio y las degustaciones elegidas es: $${contadorTotal}</li>`);
                             }
-                        
+                                
+                    else if (reservaFinalParticular[9] == "E-BIKE"){
+                               
+                            $("#detalleReservaParticular").append(`<li>Tu reserva está a nombre de: ${reservaFinalParticular[4]} y la fecha del Tour es: ${reservaFinalParticular[3]}. Recuerda que el tour que elegiste es: ${reservaFinalParticular[9]} y el costo del mismo es: $${servicioEBike.precio} por persona. Los esperamos para que disfruten de una hermosa experiencia!</li>`);
+                               
+                            $("#detalleReservaParticular").append(`<li>${servicioEBike.descripcion}. Es para un total de: ${reservaFinalParticular[2]} ciclista/s, te llegará la confirmación de la reserva a la siguiente direccion de e-mail: ${reservaFinalParticular[7]}.</li>`);
+                                
+                            contadorTotal = contadorTotal + servicioEBike.precio;
 
-            }
+                            $("#detalleReservaParticular").append(`<li>El <b>costo total</b> a pagar que incluye el servicio y las degustaciones elegidas es: <b>$${contadorTotal}</b></li>`);
+
+                            } 
+                    else {
+
+                        $("#detalleReservaParticular").prepend("<h3>DETALLE DE LA RESERVA</h3>");
+                               
+
+                        $("#detalleReservaParticular").prepend("<li>El servicio ingresado no es correcto</li>");
+                                
+                    }
+            }  
+
     }
-    //EN CASO QUE NO SE INGRESE LA RESERVA DESDE UN HOTEL ME TIRA ERROR
+    
+    //EN CASO QUE NO SE INGRESE LA RESERVA DESDE UN HOTEL ME TIRA ERROR--------------------------------------------------------------------------------------------------------------------------------
     else {
 
         $("#detalleReservaParticular").prepend("<h3>DETALLE DE LA RESERVA</h3>");
-        // let detalleParticular = document.createElement("h3");
-        // detalleParticular.innerText = "DETALLE DE LA RESERVA";
-        // let listaParticular = document.getElementById("detalleReservaParticular");
-        // listaParticular.appendChild(detalleParticular);
-
+        
         $("#detalleReservaParticular").prepend("<li>Ésta opción es solo para reservas realizadas por personas particulares.</li>");
-        // let elementoParticular = document.createElement("li");
-        // elementoParticular.innerText = "Ésta opción es solo para reservas realizadas por personas particulares.";
-        // listaParticular.appendChild(elementoParticular);
         
     }
 

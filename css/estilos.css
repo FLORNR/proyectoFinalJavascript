@@ -246,6 +246,10 @@ main #bodegas .btn-primary {
   width: auto;
 }
 
+main #bodegas .btn-warning:active {
+  background-color: gray;
+}
+
 main #reserva {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,6 +452,48 @@ main .formulario input {
 
 main .formulario label {
   margin: 5px;
+}
+
+main .estilosInfoAdicional h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: #a0fd0975;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+main .estilosInfoAdicional button {
+  background-color: #ababa6;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ababa6;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+}
+
+main .estilosInfoAdicional ul li {
+  margin: 15px 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style-position: inside;
 }
 
 main {
