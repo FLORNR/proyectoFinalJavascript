@@ -31,7 +31,20 @@ $("#h4particular").slideUp(2000)
         .delay(500)
         .slideDown(2000);
 
+// BOTON PARA BORRAR DATOS ------------------------------------------------------------------------------------
+ 
+$("#botonBorrar").on("click", borrarDatos); 
 
+function borrarDatos(){
+
+     $(".formulario")[0].reset();
+            
+    sessionStorage.clear();
+            
+    $("#detalleReservaParticular").html("");
+    $("#reservaParticular").html("");
+            }
+            
 // ARRAY DE OBJETOS PARA PODER CREAR LAS DEGUSTACIONES DE LAS DISTINTAS BODEGAS---------------------------------------------
 let bodegas = [
     { id: 1, 

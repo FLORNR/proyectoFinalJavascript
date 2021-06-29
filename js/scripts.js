@@ -30,13 +30,25 @@ $("#h4").slideUp(2000)
         .delay(500)
         .slideDown(2000);
 
+
+// BOTON PARA BORRAR DATOS ------------------------------------------------------------------------------------
+
 $("#botonBorrar").on("click", borrarDatos);
 
 function borrarDatos(){
-   $(".formulario").reset();
+
+    $(".formulario")[0].reset();
+
+    sessionStorage.clear();
+
+    $("#detalleReserva").html("");
+    $("#reserva").html("");
 }
 
+
+// FUNCION PARA ARRANCAR CODIGO ---------------------------------------------------------------------------------------
 $("#botonReserva").on("click", comenzar);
+
 
 function comenzar(){
 
@@ -55,6 +67,7 @@ function comenzar(){
     var email = $("#email").val();
     var telefono = $("#telefono").val();
     var tipoTour = (document.querySelector('input[name = "customRadio"]:checked').value).toUpperCase();
+   
 
     //INCORPORAR LOS DATOS QUE INGRESO EL USUARIO A UN ARRAY DE RESERVA FINAL----------------------------------------
     reservaFinal.push(hotel);
@@ -66,7 +79,7 @@ function comenzar(){
     reservaFinal.push(email);
     reservaFinal.push(telefono);
     reservaFinal.push(tipoTour);
-    console.log(reservaFinal)
+    console.log(reservaFinal);
 
     //DETERMINAMOS SI LA RESERVA PROVIENE DE UN HOTEL O NO-------------------------------
 
@@ -118,9 +131,9 @@ function comenzar(){
                         }
                     }
                     
-                    const servicioAutoguiado = new Servicio ("Autoguiado", 1200, "El sercicio AUTOGUIADO incluye Bicicleta, Casco, Mapa, Asesoramiento de Bodegas a Visitar, y en caso de hacerlo con tiempo reservas en las mismas");
-                    const servicioGuiado = new Servicio ("Guiado All Inclusive", 7000, "El sercicio GUIADO incluye Bicicleta, Casco, Mapa, Guia, Visita y Degustación en dos bodegas, Almuerzo tipo Picnic en una Bodega, y Degustación en almacén de Productos Regionales.");
-                    const servicioEBike = new Servicio ("E-bike", 2500, "El sercicio E-BIKE incluye Bicicleta Eléctrica, Casco, Mapa, Asesoramiento de Bodegas a Visitar, y reservas en las mismas"); 
+                    const servicioAutoguiado = new Servicio ("Autoguiado", 1200, "El servicio AUTOGUIADO incluye Bicicleta, Casco, Mapa, Asesoramiento de Bodegas a Visitar, y en caso de hacerlo con tiempo reservas en las mismas");
+                    const servicioGuiado = new Servicio ("Guiado All Inclusive", 7000, "El servicio GUIADO incluye Bicicleta, Casco, Mapa, Guia, Visita y Degustación en dos bodegas, Almuerzo tipo Picnic en una Bodega, y Degustación en almacén de Productos Regionales.");
+                    const servicioEBike = new Servicio ("E-bike", 2500, "El servicio E-BIKE incluye Bicicleta Eléctrica, Casco, Mapa, Asesoramiento de Bodegas a Visitar, y reservas en las mismas"); 
 
                     // SEGUN EL SERVICIO ELEGIDO ME TIRA DETALLE DE CADA UNO--------------------------------------------    
                      if (reservaFinal[8] == "AUTOGUIADO") {
