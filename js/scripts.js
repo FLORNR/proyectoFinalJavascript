@@ -13,6 +13,26 @@ var tipoTour;
 
 reservaFinal = [];
 
+//API CLIMA -----------------------------------------------------------------------------
+
+$(document).ready(function() {
+    obtenerClima();
+});
+
+function obtenerClima(){
+    $.get("https://api.weatherbit.io/v2.0/current?lat=-33.02700743462685&lon=-68.90710060438418&lang=es&key=aec8c1ab5f9c4b2d947444f7c29f5c27").done(function (resultado, estado){
+        // console.log("El estado que retorna get es" + estado);
+         console.log(resultado);
+            if (estado == "success") {
+                let datos = resultado; 
+                
+                $("#temperatura").append(`La temperatura actual es:  ${resultado.data[0].app_temp}ºC.`);
+                $("#precipitacion").append(`La probabilidad de precipitaciones es:  ${resultado.data[0].precip} %.`);
+                $("#descripcion").append(`Actualmente, se encuentra ${resultado.data[0].weather.description}.`)
+        }
+    });
+}
+
 //ANIMACIONES ------------------------------------------------
 $("#infoExtra").hide();
 
