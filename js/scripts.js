@@ -73,7 +73,7 @@ function comenzar(){
     if (reservaFinal[0] == "si") {
          
         // EN CASO QUE VENGA DE UN HOTEL, VERIFICAMOS QUE NO SEAN MAS DE 10 CICLISTAS, SI SON MAS, BRINDA MENSAJE DE ERROR.
-        if (reservaFinal[2] >= 10){
+        if (reservaFinal[2] > 10){
 
             $("#detalleReserva").prepend("<h3>DETALLE DE LA RESERVA</h3>");
             $("#detalleReserva").append("<li>El numero de ciclistas no puede superar las 10 personas, realice una nueva reserva</li>");

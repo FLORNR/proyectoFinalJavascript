@@ -24,11 +24,18 @@ header .navbar-nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: black;
 }
 
-header .navbar-nav .nav-link {
+header .navbar-nav .nav-item .nav-link {
   padding-left: 15px;
   padding-right: 15px;
+  color: black;
+}
+
+header .navbar-nav .nav-item .nav-link:hover {
+  color: black;
+  background-color: white;
 }
 
 header ul {
@@ -52,11 +59,6 @@ header ul li a {
   font-family: 'Nunito', sans-serif;
   font-size: 1rem;
   font-weight: 800;
-}
-
-header ul li a:hover {
-  color: black;
-  background-color: white;
 }
 
 main .fotoHoteles {
@@ -619,6 +621,66 @@ main .fotoParticular {
   color: white;
 }
 
+@media all and (max-width: 992px) {
+  header .navbar-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .navbar-nav .navbar-item .nav-link {
+    color: black;
+  }
+  header ul li {
+    margin-bottom: 10px;
+    color: black;
+  }
+  header .navbar .navbar-toggler {
+    background-color: white;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .fotoGeneral {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-image: url(../media/portadaMobile.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .fotoHoteles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-image: url(../media/hotelMobile.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .fotoParticular {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-image: url(../media/particularMobile.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 #miFooter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -651,5 +713,43 @@ main .fotoParticular {
 
 #miFooter .iconos a {
   padding-right: 5px;
+}
+
+@media all and (max-width: 992px) {
+  #miFooter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .direccionFooter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .datosUbicacion {
+    margin-bottom: 25px;
+  }
 }
 /*# sourceMappingURL=estilos.css.map */
