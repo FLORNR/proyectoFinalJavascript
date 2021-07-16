@@ -64,6 +64,105 @@ function borrarDatos(){
     $("#detalleReservaParticular").html("");
     $("#reservaParticular").html("");
             }
+
+// VALIDACIÓN DE FORMULARIO ---------------------------------------------------------------------------------------
+
+//NOMBRE HOTEL
+$("#nombreHotelParticular").on('change', validarNombreHotel);
+
+ function validarNombreHotel() {
+    valor = document.getElementById("nombreHotelParticular").value;
+    if( valor == null || valor.length == 0 || /^\s+$/.test(valor) || !(/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valor))) {
+        //document.getElementById("nombreHotel").classList.add("errorInput");
+        document.getElementById("error").innerHTML = '<p style="color:red; font-size:14px">Ingresá un nombre válido</p>';
+     }
+     else {
+        document.getElementById("error").innerHTML = "";
+     }
+}
+//CANT CICLISTAS
+$("#cantCiclistasParticular").on('change', validarCantCiclistas);
+
+ function validarCantCiclistas() {
+    valor2 = document.getElementById("cantCiclistasParticular").value;
+    console.log(valor2)
+    if( (valor2 == isNaN) || (valor2 < 1) || (valor2 >10) ) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("error2").innerHTML = '<p style="color:red; font-size:14px">Ingresá un número válido de ciclistas</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("error2").innerHTML = "";
+     }
+}
+
+// NOMBRE CICLISTA
+
+$("#nombreCiclistaParticular").on('change', validarNombreCiclista);
+
+ function validarNombreCiclista() {
+    valor3 = document.getElementById("nombreCiclistaParticular").value;
+    if( valor3 == null || valor3.length == 0 || /^\s+$/.test(valor3) || !(/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valor3)) ) {
+        //document.getElementById("nombreHotel").classList.add("errorInput");
+        document.getElementById("error3").innerHTML = '<p style="color:red; font-size:14px">Ingresá un nombre válido</p>';
+     }
+     else {
+        document.getElementById("error3").innerHTML = "";
+     }
+}
+
+//NUMERO DE DOCUMENTO
+$("#documentoParticular").on('change', validarDocumento);
+
+ function validarDocumento() {
+    valor4 = document.getElementById("documentoParticular").value;
+    console.log(valor4)
+    if( (valor4 == isNaN) || (valor4.length < 6) || (valor4.length > 9) || valor4 <= 0 ) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("error4").innerHTML = '<p style="color:red; font-size:14px">Ingresá un número válido de Documento</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("error4").innerHTML = "";
+     }
+}
+
+// EMAIL
+
+$("#emailParticular").on('change', validareMail);
+
+ function validareMail() {
+    valor5 = document.getElementById("emailParticular").value;
+    console.log(valor5)
+    if(!(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valor5))) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("error5").innerHTML = '<p style="color:red; font-size:14px">Ingresá un e-mail válido</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("error5").innerHTML = "";
+     }
+}
+
+//TELEFONO
+
+$("#telefonoParticular").on('change', validarTel);
+
+ function validarTel() {
+    valorTel = document.getElementById("telefonoParticular").value;
+    console.log(valorTel)
+
+    if( !(/^\d{10}$/.test(valorTel))) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("error6").innerHTML = '<p style="color:red; font-size:14px">Ingresá un teléfono válido</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("error6").innerHTML = "";
+     }
+}
+
+
             
 // ARRAY DE OBJETOS PARA PODER CREAR LAS DEGUSTACIONES DE LAS DISTINTAS BODEGAS---------------------------------------------
 let bodegas = [

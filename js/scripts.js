@@ -65,6 +65,104 @@ function borrarDatos(){
     $("#reserva").html("");
 }
 
+// VALIDACIÓN DE FORMULARIO ---------------------------------------------------------------------------------------
+
+//NOMBRE HOTEL
+$("#nombreHotel").on('change', validarNombreHotel);
+
+ function validarNombreHotel() {
+    valor = document.getElementById("nombreHotel").value;
+    if( valor == null || valor.length == 0 || /^\s+$/.test(valor) || !(/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valor))) {
+        //document.getElementById("nombreHotel").classList.add("errorInput");
+        document.getElementById("mensajeError").innerHTML = '<p style="color:red; font-size:14px">Ingresá un nombre válido</p>';
+     }
+     else {
+        document.getElementById("mensajeError").innerHTML = "";
+     }
+}
+//CANT CICLISTAS
+$("#cantCiclistas").on('change', validarCantCiclistas);
+
+ function validarCantCiclistas() {
+    valor2 = document.getElementById("cantCiclistas").value;
+    console.log(valor2)
+    if( (valor2 == isNaN) || (valor2 < 1) || (valor2 >10) ) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("mensajeError2").innerHTML = '<p style="color:red; font-size:14px">Ingresá un número válido de ciclistas</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("mensajeError2").innerHTML = "";
+     }
+}
+
+// NOMBRE CICLISTA
+
+$("#nombreCiclista").on('change', validarNombreCiclista);
+
+ function validarNombreCiclista() {
+    valor3 = document.getElementById("nombreCiclista").value;
+    if( valor3 == null || valor3.length == 0 || /^\s+$/.test(valor3) || !(/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valor3)) ) {
+        //document.getElementById("nombreHotel").classList.add("errorInput");
+        document.getElementById("mensajeError3").innerHTML = '<p style="color:red; font-size:14px">Ingresá un nombre válido</p>';
+     }
+     else {
+        document.getElementById("mensajeError3").innerHTML = "";
+     }
+}
+
+//NUMERO DE DOCUMENTO
+$("#documento").on('change', validarDocumento);
+
+ function validarDocumento() {
+    valor4 = document.getElementById("documento").value;
+    console.log(valor4)
+    if( (valor4 == isNaN) || (valor4.length < 7) || (valor4.length > 9) || valor4 <= 0 ) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("mensajeError4").innerHTML = '<p style="color:red; font-size:14px">Ingresá un número válido de Documento</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("mensajeError4").innerHTML = "";
+     }
+}
+
+// EMAIL
+
+$("#email").on('change', validareMail);
+
+ function validareMail() {
+    valor5 = document.getElementById("email").value;
+    console.log(valor5)
+    if(!(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valor5))) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("mensajeError5").innerHTML = '<p style="color:red; font-size:14px">Ingresá un e-mail válido</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("mensajeError5").innerHTML = "";
+     }
+}
+
+//TELEFONO
+
+$("#telefono").on('change', validarTel);
+
+ function validarTel() {
+    valorTel = document.getElementById("telefono").value;
+    console.log(valorTel)
+
+    if( !(/^\d{10}$/.test(valorTel))) {
+        // document.getElementById("cantCiclistas").classList.add("errorInput");
+        document.getElementById("mensajeError6").innerHTML = '<p style="color:red; font-size:14px">Ingresá un teléfono válido</p>';
+     }
+     else {
+        // document.getElementById("cantCiclistas").classList.remove("errorInput");
+        document.getElementById("mensajeError6").innerHTML = "";
+     }
+}
+
+
 
 // FUNCION PARA ARRANCAR CODIGO ---------------------------------------------------------------------------------------
 $("#botonReserva").on("click", comenzar);

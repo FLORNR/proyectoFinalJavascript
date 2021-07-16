@@ -5,6 +5,8 @@
     padding: 0px;
 }
 
+
+
 header {
     width: 100%;
     min-height: 3rem;
@@ -379,6 +381,11 @@ main {
         label{
             margin: 5px;
         }
+        .errorInput {
+            border: 2px solid red !important;
+        }
+        
+
     }
     .estilosInfoAdicional {
         h3{
@@ -419,8 +426,16 @@ main {
             justify-content: flex-start;
             list-style-position: inside;
         }
+        .alinear {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+           
+        }
     }
 }
+
+
 
 // seccion Index
 main{

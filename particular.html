@@ -65,23 +65,37 @@
                             <label class="custom-control-label" for="2">No</label>
                         </div>
                     </div>
-                    <input id="nombreHotelParticular" type="text" placeholder="Ingresa el nombre de tu Alojamiento u Hospedaje" required>
-                    <input id="cantCiclistasParticular" type="number" placeholder="Ingrese N° de Ciclistas que realizaran el tour (No debe superar las 10 personas, caso contrario, hacer dos reservas.)" required>
+
+                    <input id="nombreHotelParticular" type="text" placeholder="Ingresa el nombre de tu Alojamiento u Hospedaje" required maxlength="20" pattern="[A-Za-z] {2,20}">
+                    <div id="error"></div>
+
+                    <input id="cantCiclistasParticular" type="number" placeholder="Ingrese N° de Ciclistas que realizaran el tour (No debe superar las 10 personas, caso contrario, hacer dos reservas.)" required min="1" max="10">
+                    <div id="error2"></div>
+
                     <label for="fechaTourParticular">Ingresa la fecha en la que tomaran el tour: </label>
                     <input id="fechaTourParticular" type="date" placeholder="Ingresa la fecha en la que tomaran el tour" required>
-                    <input id="nombreCiclistaParticular" type="text" placeholder="Ingresá el nombre completo del ciclista principal">
+
+                    <input id="nombreCiclistaParticular" type="text" placeholder="Ingresá el nombre completo del ciclista principal" required maxlength="25" pattern="[A-Za-z] {2,25}">
+                    <div id="error3"></div>
+
                     <label for="fechaNacimientoParticular">Ingresa tu fecha de Nacimiento: </label>
                     <input id="fechaNacimientoParticular" type="date"required>
+
                     <div class="my-1 flexible">
                         <select class="custom-select custom-select-sm">
                             <option  selected>Seleccioná</option>
                             <option value="DNI">DNI</option>
                             <option value="Pasaporte">Pasaporte</option>
                         </select>
-                        <input id="documentoParticular" type="text" placeholder="Ingresá tu DNI o Pasaporte">
+                        <input id="documentoParticular" type="number" placeholder="Ingresá tu DNI o Pasaporte" required maxlength="10" pattern="[0-9] {9}">
                     </div>
-                    <input id="emailParticular" type="email" placeholder="Ingresá tu e-mail">
-                    <input id="telefonoParticular" type="tel" placeholder="Ingresá tu teléfono con código de área">
+                    <div id="error4"></div>
+                    <input id="emailParticular" type="email" placeholder="Ingresá tu e-mail" required  [a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}>
+                    <div id="error5"></div>
+
+                    <input id="telefonoParticular" type="tel" placeholder="Ingresá tu teléfono con código de área" required maxlength="10" pattern="[0-9] {9}">
+                    <div id="error6"></div>
+                    
                     <div id="tipoTourParticular">
                         <div class="custom-control custom-radio my-1">
                             <input type="radio" id="customRadio1" name="customRadioParticular" class="custom-control-input" value="Autoguiado">
@@ -105,12 +119,14 @@
 
                         </div>
                     </div>
-                    <form class="form-inline">
-                        <button id="botonReservaParticular" class="btn btn-outline-success boton" type="button">INGRESAR RESERVA</button>
-                    </form>  
-                    <form class="form-inline">
-                        <button id="botonBorrar" class="btn btn-outline-danger boton" type="reset" value= "Reset" >BORRAR DATOS</button>
-                    </form>   
+                    <div class="alinear">
+                        <form class="form-inline">
+                            <button id="botonReservaParticular" class="btn btn-outline-success boton" type="button">INGRESAR RESERVA</button>
+                        </form>    
+                        <form class="form-inline">
+                            <button id="botonBorrar" class="btn btn-outline-danger boton w-100" type="button">BORRAR DATOS</button>
+                        </form>
+                    </div> 
                 </form>
         </div>
         
@@ -168,3 +184,4 @@
 </body>
 
 </html>
+

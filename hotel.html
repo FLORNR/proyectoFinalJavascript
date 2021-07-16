@@ -49,9 +49,9 @@
             <p></p>
         </div>
         <div class="col-12">
-            <form class="formulario">
+            <form action="" class="formulario">
                 <h4 id="h4">INGRESA TUS DATOS AQUÍ</h4>
-                <div id="tipoTour">
+                <div id="hotel">
                     <label for="hotel">¿La reserva la realizas en nombre de un hotel?</label>
                     <div class="custom-control custom-radio my-1">
                         <input type="radio" id="1" name="hotel" class="custom-control-input" value="si">
@@ -62,21 +62,36 @@
                         <label class="custom-control-label" for="2">No</label>
                     </div>
                 </div>
+                <div id="mensajeError1"></div>
+
                 <input id="nombreHotel" type="text" placeholder="Ingresa el nombre del HOTEL por el cual haces la reserva" required>
+                <div id="mensajeError"></div>
+
                 <input id="cantCiclistas" type="number" placeholder="Ingrese N° de Ciclistas (No debe superar las 10 personas, caso contrario, hacer dos reservas.)" required>
+                <div id="mensajeError2"></div>
+
                 <label for="fechaTour">Ingresa la fecha en la que tomaran el tour: </label>
                 <input id="fechaTour" type="date" placeholder="Ingresa la fecha en la que tomaran el tour" required>
+
                 <input id="nombreCiclista" type="text" placeholder="Ingresá el nombre completo del ciclista principal">
+                <div id="mensajeError3"></div>
+
                 <div class="my-1 flexible">
                     <select class="custom-select custom-select-sm">
                           <option  selected>Seleccioná</option>
                           <option value="DNI">DNI</option>
                          <option value="Pasaporte">Pasaporte</option>
                     </select>
-                    <input id="documento" type="text" placeholder="Ingresá tu DNI o Pasaporte">
+                    <input id="documento" type="number" placeholder="Ingresá tu DNI o Pasaporte">
                 </div>
+                <div id="mensajeError4"></div>
+
                 <input id="email" type="email" placeholder="Ingresá el e-mail del ciclista principal">
+                <div id="mensajeError5"></div>
+
                 <input id="telefono" type="tel" placeholder="Ingresá el teléfono del ciclista con código de área">
+                <div id="mensajeError6"></div>
+
                 <div id="tipoTour">
                     <div class="custom-control custom-radio my-1">
                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Autoguiado">
@@ -91,13 +106,16 @@
                         <label class="custom-control-label" for="customRadio3">Tour E-bike</label>
                      </div>    
                  </div>
+                 <p class="mensajeError9"></p>
 
-                <form class="form-inline">
-                    <button id="botonReserva" class="btn btn-outline-success boton" type="button">INGRESAR RESERVA</button>
-                </form>    
-                <form class="form-inline">
-                    <button id="botonBorrar" class="btn btn-outline-danger boton" type="button">BORRAR DATOS</button>
-                </form>  
+                <div class="alinear">
+                    <form class="form-inline">
+                        <button id="botonReserva" class="btn btn-outline-success boton" type="button">INGRESAR RESERVA</button>
+                    </form>    
+                    <form class="form-inline">
+                        <button id="botonBorrar" class="btn btn-outline-danger boton w-100" type="button">BORRAR DATOS</button>
+                    </form>
+                </div>  
             </form>
             <div id="reserva">
 
